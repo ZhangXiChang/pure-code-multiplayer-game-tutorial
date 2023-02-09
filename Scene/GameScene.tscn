@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bebnvnugbwkxj"]
+
+[ext_resource type="Script" path="res://Scene/GameScene.cs" id="1_t0ssq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjhc7"]
+size = Vector2(1045, 32)
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_t0ssq")
+
+[node name="PlayerBirthPoint" type="Marker2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 267)
+shape = SubResource("RectangleShape2D_cjhc7")

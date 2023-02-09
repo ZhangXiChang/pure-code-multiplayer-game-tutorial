@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfj16ebx2tuwt"]
+
+[ext_resource type="Script" path="res://Start.cs" id="1_blbin"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_blbin")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -85.5
+offset_right = 50.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IP" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "127.0.0.1"
+placeholder_text = "IP"
+
+[node name="Name" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "玩家名称"
+
+[node name="CreateHost" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "创建主机"
+
+[node name="JoinHost" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "加入主机"
+
+[node name="QuitGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "退出游戏"
+
+[connection signal="pressed" from="VBoxContainer/CreateHost" to="." method="CreateHostButton"]
+[connection signal="pressed" from="VBoxContainer/JoinHost" to="." method="JoinHostButton"]
+[connection signal="pressed" from="VBoxContainer/QuitGame" to="." method="QuitGameButton"]
